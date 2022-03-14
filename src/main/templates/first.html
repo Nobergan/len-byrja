@@ -1,0 +1,62 @@
+<section class="first">
+  <div class="container">
+    <div class="first__desk-box">
+      <img src="../img/first/hero-img-desk.png" alt="котировки" class="first__img-desk" />
+      <div class="first__desktop-flex">
+        <h1 class="first__title">
+          Ничего не понятно,
+          <span class="first__title--part"><br />а зарабатывать хочется?</span>
+        </h1>
+        <img src="../img/first/hero-img.png" alt="котировки" class="first__img" />
+        <p class="first__text">
+          Чтобы делать деньги, не нужно быть специалистом
+        </p>
+        <p class="first__text">
+          <span class="first__text--part">ЛЕНБИРЖА</span> — простая и понятная
+          альтернатива Мосбирже
+          <span class="first__text--part">от создателей Альфа-Банк</span>
+        </p>
+      </div>
+    </div>
+
+    <form method="POST" action="thanks/index.php" class="form" id="form">
+      <h2 class="form__title">
+        <span class="form__title--part">Отправь нам заявку</span> и расскажи
+        родным, что ты теперь <span class="form__title--part">инвестор</span>
+      </h2>
+      <div class="input_wrapper">
+        <div>
+          <input name="f_name" placeholder="Ваше имя" />
+        </div>
+        <div>
+          <input name="l_name" placeholder="Ваша фамилия" />
+        </div>
+        <div>
+          <input type="email" name="email" placeholder="Ваш e-mail" />
+        </div>
+        <style>
+          .iti__flag-container {
+            z-index: 50;
+          }
+
+          .iti-mobile .iti__country-list {
+            width: 85%;
+          }
+        </style>
+        <input type="tel" name="phone" placeholder="Ваш телефон" autocomplete="off" required />
+        <input type="hidden" name="phone2" class="phone2" autocomplete="off" required />
+        <!-- Use variable from gep parameter @ first line - from php code in top of file -->
+        <input type="hidden" name="pixel_id" value="<?php echo $FacebookPixel?>" />
+        <input type="hidden" name="page_lang" value="<?php echo $page_lang?>" />
+        <input type="hidden" name="query" value="<?php echo $QUERY?>" />
+        <input type="hidden" name="gp_id" value="<?php echo $gp?>" />
+        <input type="hidden" name="hs_id" value="<?php echo $hs?>" />
+        <!-- change to actual name of Landing. Name with uppercased letters -->
+        <input type="hidden" name="landing" value="LENBYRJA" />
+        <button class="form__btn" type="submit">
+          Инвестируй и зарабатывай
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

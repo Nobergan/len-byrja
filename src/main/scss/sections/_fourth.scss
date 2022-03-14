@@ -1,0 +1,202 @@
+.fourth {
+  padding: 60px 0;
+  text-align: center;
+
+  @include for-size(tablet) {
+    padding: 120px 0;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+
+    @include font(800, 32px, 1.4);
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: $primary-text_color;
+  }
+
+  &__text {
+    margin: 0 0 10px;
+
+    @include font(500, 16px, 1.4);
+    text-align: center;
+
+    color: $primary-text_color;
+
+    @include for-size(tablet) {
+      margin-bottom: 8px;
+      @include font(500, 24px, 1.4);
+    }
+  }
+
+  &__text-two {
+    margin: 0 0 20px;
+
+    @include font(normal, 14px, 1.4);
+    text-align: center;
+
+    color: $third-text_color;
+
+    @include for-size(tablet) {
+      margin-bottom: 40px;
+      @include font(normal, 18px, 1.4);
+    }
+  }
+}
+
+// TABLE
+
+table {
+  display: inline-block;
+  width: 100%;
+  max-width: 425px;
+  padding: 12px 12px 24px;
+  border-collapse: collapse;
+
+  background: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25), 0px 0px 59px rgba(0, 0, 0, 0.16);
+
+  @include for-size(tablet) {
+    display: table;
+    max-width: 100%;
+    border-collapse: unset;
+    padding: 32px 36px 64px;
+  }
+}
+
+th {
+  display: inline-block;
+  width: 25%;
+  height: 51px;
+  padding-top: 10px;
+
+  @include font(500, 12px, 1);
+
+  color: $primary-text_color;
+  border-bottom: 1px solid #d4e2e8;
+  border-right: 1px solid #d4e2e8;
+
+  @include for-size(tablet) {
+    position: relative;
+    padding-top: 15px;
+    @include font(500, 16px, 0.8);
+  }
+}
+
+.th__after::after {
+  @include for-size(tablet) {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    background-image: url("../../img/fourth/info.svg");
+  }
+}
+
+.tippy-box[data-theme~="theme"] {
+  max-width: 272px;
+  padding: 16px 12px;
+  background: #d4e2e8;
+  border-radius: 24px;
+  color: $primary-text_color;
+}
+
+tr th:first-child {
+  text-align: left;
+  padding: 17px 20px 20px 0;
+
+  @include for-size(tablet) {
+    padding: 15px;
+    text-align: center;
+  }
+}
+
+tr th:last-child {
+  border-right: none;
+}
+
+.th-part {
+  font-size: 8px;
+
+  @include for-size(tablet) {
+    font-size: 10px;
+  }
+}
+
+td {
+  display: inline-block;
+  width: 25%;
+  padding: 5px;
+  border-right: 1px solid #d4e2e8;
+
+  @include for-size(tablet) {
+    padding: 10px;
+  }
+}
+
+tr td:nth-child(1) {
+  @include font(bold, 12px, 1);
+  text-align: left;
+
+  color: $primary-text_color;
+
+  @include for-size(tablet) {
+    text-align: center;
+    @include font(bold, 16px, 1);
+  }
+}
+
+tr td:nth-child(2) {
+  @include font(normal, 12px, 1);
+  text-align: center;
+
+  color: $primary-text_color;
+
+  @include for-size(tablet) {
+    @include font(normal, 16px, 1);
+  }
+}
+
+tr td:nth-child(3) {
+  @include font(bold, 12px, 1);
+  text-align: center;
+
+  color: #009606;
+
+  @include for-size(tablet) {
+    @include font(bold, 16px, 1);
+  }
+}
+
+tr td:nth-child(4) {
+  @include font(bold, 12px, 1);
+  text-align: center;
+
+  color: #2233b2;
+  border: none;
+
+  @include for-size(tablet) {
+    @include font(bold, 16px, 1);
+  }
+}
+
+.table-link-box {
+  display: inline-block;
+  width: 100%;
+  padding-top: 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.table-link {
+  @include font(bold, 24px, 1.4);
+
+  text-align: center;
+  text-decoration-line: underline;
+
+  color: $accent_color;
+}

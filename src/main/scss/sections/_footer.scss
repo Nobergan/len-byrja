@@ -1,0 +1,22 @@
+.footer {
+  padding: 24px 0 20px;
+
+  @include for-size(desktop) {
+    padding: 40px 0 32px;
+  }
+}
+
+.footer__text {
+  width: 100%;
+  max-width: 425px;
+  margin: 0 auto;
+
+  @include font(300, 10px, 1.4);
+
+  color: $primary-text_color;
+
+  @include for-size(desktop) {
+    max-width: unset;
+    @include font(300, 14px, 1.4);
+  }
+}

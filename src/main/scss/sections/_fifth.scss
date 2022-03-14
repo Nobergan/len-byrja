@@ -1,0 +1,147 @@
+.fifth {
+  padding: 40px 0;
+  background: #d4e2e8;
+
+  @include for-size(desktop) {
+    padding: 120px 0;
+  }
+
+  &_img-box {
+    width: 100%;
+    max-width: 425px;
+    margin: 0 auto 10px;
+    padding: 0 0 12px;
+    text-align: center;
+    background: $box-bg_color;
+
+    @include for-size(desktop) {
+      max-width: 50%;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__img-mob {
+    max-width: 425px;
+    margin: 0 auto 10px;
+    padding-bottom: 12px;
+
+    background: #ffffff;
+
+    @include for-size(desktop) {
+      display: none;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 425px;
+    margin: 0;
+
+    @include for-size(desktop) {
+      display: none;
+    }
+  }
+
+  &__img-desk {
+    display: none;
+
+    @include for-size(desktop) {
+      display: block;
+      width: 50%;
+      margin: 0 0 0 20px;
+      float: right;
+    }
+  }
+
+  &__img-title {
+    margin: 12px 0 8px;
+    padding: 0 20px;
+
+    @include font(bold, 16px, 1);
+    text-align: center;
+
+    color: $primary-text_color;
+
+    @include for-size(desktop) {
+      @include font(bold, 24px, 1);
+      text-align: right;
+    }
+  }
+
+  &__img-text {
+    padding: 0 20px;
+    margin-bottom: 0;
+
+    @include font(normal, 14px, 1.2);
+
+    text-align: center;
+
+    color: $primary-text_color;
+
+    @include for-size(desktop) {
+      @include font(normal, 16px, 1);
+      text-align: right;
+    }
+  }
+
+  &__desk-flex {
+    @include for-size(desktop) {
+      width: 100%;
+    }
+  }
+
+  &__desk-box {
+    max-width: 425px;
+    height: 365px;
+    max-height: 100%;
+    padding: 24px 16px;
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background: $box-bg_color;
+
+    @include for-size(desktop) {
+      width: 100%;
+      max-width: unset;
+      height: 555px;
+      padding: 60px 40px 1px 60px;
+    }
+  }
+
+  &__desk-box.open-text {
+    height: unset;
+  }
+}
+
+.fifth .container {
+  @include for-size(desktop) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.toggle-btn {
+  display: block;
+  max-width: 425px;
+  padding: 16px 0 24px;
+  margin: 0 auto;
+
+  @include font(bold, 14px, 1.2);
+
+  text-align: center;
+  text-decoration-line: underline;
+
+  color: $accent_color;
+  background: $box-bg_color;
+  cursor: pointer;
+
+  @include for-size(desktop) {
+    max-width: unset;
+  }
+}
+
+.open-text {
+  height: 100%;
+}

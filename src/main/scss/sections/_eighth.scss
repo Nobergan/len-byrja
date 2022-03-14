@@ -1,0 +1,220 @@
+.eighth {
+  padding: 60px 0;
+
+  background: #f4f9ff;
+
+  @include for-size(desktop) {
+    padding: 120px;
+  }
+}
+
+// QUESTIONS
+
+.eighth__quest {
+  max-width: 425px;
+  margin: 0 auto;
+  display: none;
+
+  &.active {
+    display: block;
+    animation: smooth 2s ease;
+  }
+
+  @include for-size(desktop) {
+    max-width: unset;
+  }
+
+  &-num {
+    margin: 0 0 24px;
+
+    @include font(500, 14px, 1.4);
+
+    text-align: center;
+
+    color: #ad2312;
+
+    @include for-size(desktop) {
+      margin: 0 0 28px;
+      @include font(500, 24px, 1.4);
+    }
+  }
+
+  &-title {
+    margin: 0 0 20px;
+
+    @include font(bold, 24px, 1.2);
+
+    text-align: center;
+
+    color: $primary-text_color;
+
+    @include for-size(desktop) {
+      width: 739px;
+      margin: 0 auto 36px;
+      @include font(bold, 32px, 1.2);
+    }
+  }
+
+  &-two {
+    display: none;
+  }
+
+  &-three {
+    display: none;
+  }
+}
+
+.eighth__ans-list {
+  display: flex;
+  justify-content: center;
+
+  padding: 0;
+  list-style: none;
+}
+
+.eighth__ans-item {
+  width: 91px;
+  padding: 9px;
+
+  @include font(bold, 16px, 1.4);
+
+  text-align: center;
+
+  color: $primary-text_color;
+  background: #d4e2e8;
+  cursor: pointer;
+
+  @include for-size(desktop) {
+    width: 182px;
+    padding: 18px;
+  }
+
+  &:not(:last-child) {
+    margin-right: 8px;
+
+    @include for-size(desktop) {
+      margin-right: 10px;
+    }
+  }
+}
+
+.eighth__ans-width {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 66px;
+  // height: 51px;
+  padding: 10px 0;
+
+  @include font(bold, 14px, 1.1);
+
+  text-align: center;
+
+  color: #212121;
+
+  @include for-size(desktop) {
+    width: 182px;
+    padding: 20px 10px;
+
+    @include font(bold, 16px, 1.1);
+  }
+}
+
+// RESULT
+
+.eighth__res {
+  max-width: 425px;
+  margin: 0 auto;
+  display: none;
+
+  &.active {
+    display: block;
+    animation: smooth 2s ease;
+  }
+
+  @include for-size(desktop) {
+    max-width: unset;
+  }
+
+  &-title {
+    margin: 0 0 16px;
+
+    @include font(800, 32px, 1.4);
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: $accent_color;
+
+    @include for-size(desktop) {
+      margin: 0 0 24px;
+      @include font(800, 40px, 1.4);
+    }
+  }
+
+  &-text {
+    margin: 0 0 24px;
+
+    @include font(500, 16px, 1.4);
+
+    text-align: center;
+
+    color: $primary-text_color;
+
+    @include for-size(desktop) {
+      margin: 0 0 32px;
+      @include font(500, 24px, 1.4);
+    }
+  }
+
+  &-btn {
+    padding: 16px 24px;
+    margin: 0 auto;
+
+    @include font(800, 16px, 1);
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: $btn_text;
+    background: $btn_background;
+
+    @include for-size(desktop) {
+      width: 565px;
+      height: 60px;
+      padding: 17px;
+      margin: 0 auto;
+      @include font(800, 24px, 1);
+    }
+  }
+
+  &-btn:hover,
+  &-btn:focus,
+  &-btn:active {
+    color: $primary-text_color;
+    background: $btn_text;
+    border: 2px solid $btn_background;
+  }
+
+  &-one {
+    display: none;
+  }
+
+  &-two {
+    display: none;
+  }
+
+  &-three {
+    display: none;
+  }
+}
+
+@keyframes smooth {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

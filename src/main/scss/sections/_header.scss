@@ -1,0 +1,144 @@
+.header {
+  padding: 19px 0 0;
+
+  @include for-size(tablet) {
+    padding: 36px 0 0;
+  }
+
+  &__logo {
+    width: 134px;
+    height: 33px;
+    margin-bottom: 19px;
+
+    @include for-size(tablet) {
+      width: 278px;
+      height: 68px;
+      margin: 0;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 34px;
+
+    @include for-size(tablet) {
+      margin: 0;
+    }
+  }
+
+  &__menu-item {
+    width: 140px;
+    margin: 0 5px 0 0;
+
+    @include font(bold, 14px, 1);
+
+    text-align: center;
+
+    color: $primary-text_color;
+
+    cursor: pointer;
+
+    @include for-size(tablet) {
+      @include font(bold, 20px, 1);
+    }
+  }
+
+  &__menu-btn {
+    padding: 13px 21px;
+    width: 143px;
+
+    @include font(bold, 14px, 1);
+
+    text-align: center;
+
+    color: $btn_text;
+    background: $btn_background;
+
+    @include for-size(tablet) {
+      width: 220px;
+      padding: 14px 27px;
+      @include font(bold, 20px, 1);
+    }
+  }
+
+  &__menu-btn:hover,
+  &__menu-btn:focus,
+  &__menu-btn:active {
+    color: $primary-text_color;
+    background: $btn_text;
+    border: 2px solid $btn_background;
+  }
+}
+
+.header .container {
+  text-align: center;
+
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 36px;
+  }
+}
+
+// MARQUEE
+
+.marquee {
+  width: 100%;
+  padding: 12px 0;
+  white-space: nowrap;
+  background: #f4f9ff;
+  overflow: hidden;
+
+  & div {
+    display: inline-block;
+    padding-left: 100%;
+    animation: marquee 30s linear infinite;
+    // overflow: hidden;
+  }
+
+  & div:hover {
+    animation-play-state: paused;
+  }
+
+  &__item {
+    margin-right: 20px;
+  }
+
+  &__first-part {
+    margin-right: 15px;
+    @include font(normal, 16px, 1);
+
+    color: #2233b2;
+  }
+
+  &__second-part {
+    margin-right: 15px;
+    @include font(normal, 16px, 1);
+
+    color: #212121;
+  }
+
+  &__third-part {
+    margin-right: 35px;
+    @include font(normal, 16px, 1);
+
+    color: #f12d15;
+  }
+
+  &__third-part--plus {
+    margin-right: 35px;
+    color: green;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate(0, 100);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}

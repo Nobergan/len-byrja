@@ -1,0 +1,21 @@
+.second {
+  padding: 0 0 40px;
+
+  @include for-size(tablet) {
+    padding: 0 0 80px;
+  }
+}
+
+.second__slide-mob {
+  @include for-size(tablet) {
+    display: none;
+  }
+}
+
+.second__slide-desk {
+  display: none;
+
+  @include for-size(tablet) {
+    display: block;
+  }
+}

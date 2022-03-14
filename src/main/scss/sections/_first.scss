@@ -1,0 +1,215 @@
+.first {
+  padding: 40px 0;
+
+  background-image: url("../../img/first/hero_bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-y: 62%;
+
+  @include for-size(tablet) {
+    padding: 46px 0 80px;
+
+    background-image: url("../../img/first/hero_bg-desk.png");
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    @include font(800, 31px, 1.4);
+
+    color: $primary-text_color;
+
+    @include for-size(desktop) {
+      margin-bottom: 30px;
+      @include font(800, 40px, 1.4);
+    }
+  }
+
+  &__title--part {
+    font-size: 27px;
+    text-transform: uppercase;
+    color: $accent_color;
+
+    @include for-size(desktop) {
+      font-size: 40px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 425px;
+    margin: 0 auto 20px;
+
+    @include for-size(desktop) {
+      display: none;
+    }
+  }
+
+  &__img-desk {
+    display: none;
+
+    @include for-size(desktop) {
+      display: block;
+    }
+  }
+
+  &__text {
+    margin-bottom: 12px;
+    @include font(normal, 16px, 1.2);
+
+    color: $primary-text_color;
+
+    @include for-size(desktop) {
+      @include font(normal, 24px, 1.2);
+    }
+  }
+
+  &__text--part {
+    font-weight: 800;
+    color: $accent_color;
+  }
+}
+
+.first__desk-box {
+  @include for-size(tablet) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include for-size(desktop) {
+    justify-content: space-between;
+  }
+}
+
+.first__desktop-flex {
+  @include for-size(tablet) {
+    width: 581px;
+    text-align: center;
+  }
+
+  @include for-size(desktop) {
+    text-align: unset;
+  }
+}
+
+// FORM
+
+.form {
+  max-width: 425px;
+  margin: 0 auto;
+  padding: 32px 24px;
+  margin-top: 40px;
+
+  background: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25), 0px 0px 59px rgba(0, 0, 0, 0.16);
+
+  @include for-size(desktop) {
+    max-width: 948px;
+    padding: 80px 96px;
+    text-align: center;
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    @include font(700, 16px, 1.4);
+
+    color: $primary-text_color;
+
+    @include for-size(desktop) {
+      margin: 0 0 32px;
+      @include font(700, 32px, 1.4);
+      text-align: center;
+    }
+  }
+
+  &__title--part {
+    @include font(800, 16px, 1.4);
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: $accent_color;
+
+    @include for-size(desktop) {
+      @include font(800, 32px, 1.4);
+    }
+  }
+
+  & input {
+    width: 100%;
+    padding: 11px 0;
+    text-align: center;
+    background: #f4f9ff;
+    border: none;
+
+    @include for-size(desktop) {
+      max-width: 565px;
+      padding: 19px 0;
+      margin-bottom: 20px;
+    }
+  }
+
+  & input::placeholder {
+    @include font(normal, 14px, 1.4);
+
+    text-align: center;
+
+    color: $primary-text_color;
+
+    @include for-size(desktop) {
+      @include font(normal, 16px, 1.4);
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 12px 30px;
+    margin-top: 20px;
+
+    @include font(800, 16px, 1.4);
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #ffffff;
+
+    background: $btn_background;
+
+    @include for-size(desktop) {
+      max-width: 565px;
+      height: 60px;
+      margin: 32px auto 0;
+      // padding: 17px 30px;
+
+      @include font(800, 24px, 1.4);
+    }
+  }
+
+  &__btn:hover,
+  &__btn:focus,
+  &__btn:active {
+    color: $primary-text_color;
+    background: $btn_text;
+    border: 2px solid $btn_background;
+  }
+}
+
+.iti {
+  @include for-size(desktop) {
+    max-width: 565px;
+  }
+}
+
+.iti--separate-dial-code input[type="tel"] {
+  @include for-size(desktop) {
+    text-align: center !important;
+    padding-right: 91px;
+  }
+}
+
+.help-block-error {
+  @include for-size(desktop) {
+    max-width: 565px;
+    margin: 0 auto;
+  }
+}
